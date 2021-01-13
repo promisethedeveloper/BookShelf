@@ -1,25 +1,46 @@
 import React from "react";
 import "./styles.css";
+import { data } from "./books";
 
 export default function App() {
   return (
     <article className="booklist">
-      <Book />
+      {data.map((book) => {
+        return <Book key={book.id} {...book}></Book>;
+      })}
     </article>
   );
 }
 
-const author = "Mario Puzo";
-const Book = () => {
-  const title = "The GodFather";
+// destrucuring can also be done in the parameter
+const Book = ({ img, title, author }) => {
+  // destructing the props
+  // const { img, title, author } = props;
+  const clickHandler = (e) => {
+    console.log(e);
+    console.log(e.target);
+    alert("Hello world!");
+  };
+
+  const complexExample = (author) => {
+    console.log(author);
+  };
   return (
-    <section className="book">
-      <img
-        src="https://m.media-amazon.com/images/I/81QJnMbMQAL._AC_UY436_FMwebp_QL65_.jpg"
-        alt=""
-      />
-      <h1>{title}</h1>
-      <h4>{author.toUpperCase()}</h4>
+    <section
+      className="book"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
+      <img src={img} alt="" />
+      <h1 onClick={() => console.log(title)}>{title}</h1>
+      <h4>{author}</h4>
+      <button type="button" onClick={clickHandler}>
+        reference example
+      </button>
+      <button type="button" onClick={() => complexExample(author)}>
+        more complex example
+      </button>
     </section>
   );
 };

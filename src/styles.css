@@ -11,17 +11,6 @@ body {
   color: #1a508b;
 }
 
-.book h1 {
-  margin-top: 0.5rem;
-}
-
-.book h4 {
-  color: red;
-  letter-spacing: 5px;
-  font-size: 0.75rem;
-  margin-top: 0.25rem;
-}
-
 .booklist {
   width: 90vw;
   max-width: 1170px;
@@ -40,4 +29,19 @@ body {
   background: white;
   border-radius: 1rem;
   padding: 1rem 2rem;
+}
+
+.book h1 {
+  margin-top: 0.5rem;
+}
+
+.book h4 {
+  color: red;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.book p {
+  margin-top: 0.5rem;
 }
